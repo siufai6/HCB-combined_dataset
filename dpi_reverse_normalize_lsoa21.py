@@ -1,10 +1,14 @@
 import pandas as pd
 
-# this reads the DPI file and maps it to LSOA 2021 codes
+# this reads the DPI file and maps it to LSOA 2021 codes, normalize the scores to a range of 0 to 10
+# note that in the original data file is score is in the range of 0 to 100, while 100 is the best score
+# in order to combine with other datasets, we need to invert the score, i.e. 100 in the original data is 0 in the normalized data
+# 
 # DPI file source: https://www.ons.gov.uk/peoplepopulationandcommunity/householdcharacteristics/homeinternetandsocialmediausage/datasets/digitalpropensityindexforcensus2021atlowerlayersuperoutputareaslsoasenglandandwales
 # LSOA 2021 mapping file source: https://www.data.gov.uk/dataset/03a52a27-36e7-4f33-a632-83282faea36f/lsoa-2011-to-lsoa-2021-to-local-authority-district-2022-exact-fit-lookup-for-ew-v3
 # 
 # the results would be used to combine with other datasets to create a combined score for analysis
+
 
 def normalize_to_range(x, new_min=0, new_max=10):
     """

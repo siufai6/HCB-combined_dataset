@@ -99,7 +99,7 @@ print("\nMerged Dataset (First 5 rows):")
 print(merged_df.head())
 
 # Save the merged dataset
-merged_df.to_csv('mapped_lsoa_to_postcode_top50.csv', index=False)
+merged_df.to_csv('poverty_factors_lsoa_to_postcode_top50.csv', index=False)
 print("\nMerged dataset saved to 'mapped_lsoa_to_postcode_top50.csv'")
 
 # Optional: Spot-check a few mappings
